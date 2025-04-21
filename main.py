@@ -164,12 +164,12 @@ def predict_restock():
         predicted_needed = max(int(predicted_quantity), 0)
 
         # Weather adjustment
-        month = product_data['month'].iloc[-1].split('-')[1]
-        year = product_data['month'].iloc[-1].split('-')[0]
-        avg_temperature = get_weather_data(int(month), int(year))
+        # month = product_data['month'].iloc[-1].split('-')[1]
+        # year = product_data['month'].iloc[-1].split('-')[0]
+        # avg_temperature = get_weather_data(int(month), int(year))
 
-        temperature_adjustment_factor = 1 + (avg_temperature - 25) * 0.05
-        predicted_needed = int(predicted_needed * temperature_adjustment_factor)
+        # temperature_adjustment_factor = 1 + (avg_temperature - 25) * 0.05
+        # predicted_needed = int(predicted_needed * temperature_adjustment_factor)
 
         predictions.append({
             "id": int(product_id),
